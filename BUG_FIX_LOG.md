@@ -1,0 +1,14 @@
+# MotoGo — Bug Fix Log (`BUG_FIX_LOG.md`)
+
+This log records actual bugs and security edge cases discovered during development and testing across Batches 4–16, along with their verified fixes.
+
+---
+
+| ID | Batch | Area | Issue Discovered | Fix Implemented | Verification |
+| :---: | :---: | :--- | :--- | :--- | :--- |
+| **BUG-01** | Batch 4 | `transition_ride_status` SQL RPC | `v_ride.status` was overwritten by `RETURNING * INTO v_ride` before inserting into `ride_status_history`, which would have logged the new status as `previous_status`. | Captured `v_prev_status := v_ride.status` before executing `UPDATE public.rides` in [202611230003_ride_rpcs_and_triggers.sql](file:///f:/ws%20semi%20brad/supabase/migrations/202611230003_ride_rpcs_and_triggers.sql). | Applied live to Supabase (`HTTP 201`). |
+| **BUG-02** | Batch 11 | `rideRequest.ts` Node ESM testability | Extensionless relative import `./fare` caused Node v24 direct TypeScript execution to throw `ERR_MODULE_NOT_FOUND`. | Inlined the 2-line coordinate equality check in [rideRequest.ts](file:///f:/ws%20semi%20brad/src/lib/domain/rideRequest.ts) so it is zero-dependency in both Next.js and Node tests. | `10/10` validation tests passed. |
+| **BUG-03** | Batch 12 | `DriverClientControls.tsx` | Multi-occurrence edit replaced `<ActionFeedback state={state} />` inside `DriverActiveRideClient` with `acceptState`/`rejectState`. | Restored `<ActionFeedback state={state} />` in `DriverActiveRideClient` inside [DriverClientControls.tsx](file:///f:/ws%20semi%20brad/src/components/driver/DriverClientControls.tsx). | `npm run build` passed with 0 errors. |
+| **BUG-04** | Batch 12 | `matching.ts` concurrent accept logic | `resolveConcurrentAcceptAttempts` did not check `driver.rejectedRideIds.includes(rideId)`, allowing a driver who previously rejected an offer to win a simulated race. | Added explicit rejection-list check in [matching.ts](file:///f:/ws%20semi%20brad/src/lib/domain/matching.ts). | Concurrency test passed (`1 winner, 7 rejected`). |
+| **BUG-05** | Batch 13 | `DriverClientControls.tsx` lint hygiene | Removing manual `useEffect` Realtime subscription left an unused `useEffect` import. | Removed unused `useEffect` import from [DriverClientControls.tsx](file:///f:/ws%20semi%20brad/src/components/driver/DriverClientControls.tsx). | `npm run build` + ESLint passed with 0 warnings. |
+| **BUG-06** | Batch 16 | PostgreSQL RLS (`profiles` & `vehicles`) | Direct PostgREST updates by non-admins were not explicitly blocked from modifying `profiles.account_status` or `vehicles.verification_status`. | Added `trg_profiles_self_update_guard` and `trg_vehicles_self_update_guard` in [202611230010_security_hardening.sql](file:///f:/ws%20semi%20brad/supabase/migrations/202611230010_security_hardening.sql). | Documented in `SECURITY_AUDIT.md`; ready for SQL Editor deployment. |

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="60%" stop-color="#132042"/>
+      <stop offset="100%" stop-color="#1E3A5F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="620" cy="140" r="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="road" x1="0" y1="360" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#070D1D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Night-to-sunset Iligan skyline backdrop -->
+  <rect width="800" height="520" rx="28" fill="url(#sky)"/>
+  <circle cx="620" cy="140" r="240" fill="url(#glow)"/>
+
+  <!-- Stylized city skyline silhouette -->
+  <g fill="#0F1B38" opacity="0.9">
+    <rect x="30" y="210" width="58" height="160" rx="6"/>
+    <rect x="98" y="165" width="70" height="205" rx="6"/>
+    <rect x="178" y="230" width="52" height="140" rx="6"/>
+    <rect x="242" y="185" width="84" height="185" rx="6"/>
+    <rect x="340" y="140" width="66" height="230" rx="6"/>
+    <rect x="420" y="205" width="76" height="165" rx="6"/>
+    <rect x="510" y="155" width="64" height="215" rx="6"/>
+    <rect x="588" y="190" width="86" height="180" rx="6"/>
+    <rect x="688" y="165" width="74" height="205" rx="6"/>
+  </g>
+
+  <!-- Warm lit building windows -->
+  <g fill="#FB923C" opacity="0.35">
+    <rect x="114" y="185" width="12" height="16" rx="2"/>
+    <rect x="138" y="185" width="12" height="16" rx="2"/>
+    <rect x="114" y="212" width="12" height="16" rx="2"/>
+    <rect x="356" y="160" width="14" height="18" rx="2"/>
+    <rect x="380" y="160" width="14" height="18" rx="2"/>
+    <rect x="356" y="190" width="14" height="18" rx="2"/>
+    <rect x="526" y="178" width="12" height="16" rx="2"/>
+    <rect x="548" y="178" width="12" height="16" rx="2"/>
+    <rect x="608" y="215" width="16" height="18" rx="2"/>
+    <rect x="636" y="215" width="16" height="18" rx="2"/>
+  </g>
+
+  <!-- Curved Highway & Glowing Route Line -->
+  <path d="M0 365 Q400 325 800 380 L800 520 L0 520 Z" fill="url(#road)"/>
+  <path d="M20 430 Q390 382 780 438" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-dasharray="22 16" opacity="0.9"/>
+
+  <!-- Pickup Pin (Left) & Destination Pin (Right) -->
+  <g transform="translate(115, 290)">
+    <circle cx="0" cy="0" r="22" fill="#F97316" opacity="0.22"/>
+    <path d="M0 -24 C-12 -24 -20 -15 -20 -4 C-20 11 0 26 0 26 C0 26 20 11 20 -4 C20 -15 12 -24 0 -24 Z" fill="#F97316"/>
+    <circle cx="0" cy="-5" r="7" fill="#FFFFFF"/>
+  </g>
+
+  <g transform="translate(685, 300)">
+    <circle cx="0" cy="0" r="22" fill="#10B981" opacity="0.22"/>
+    <path d="M0 -24 C-12 -24 -20 -15 -20 -4 C-20 11 0 26 0 26 C0 26 20 11 20 -4 C20 -15 12 -24 0 -24 Z" fill="#10B981"/>
+    <circle cx="0" cy="-5" r="7" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Stylized Modern SakayNa Scooter + Helmeted Rider & Passenger -->
+  <g transform="translate(245, 195)">
+    <!-- Motion speed streaks -->
+    <line x1="-65" y1="95" x2="-10" y2="95" stroke="#FB923C" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="-90" y1="122" x2="-20" y2="122" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" opacity="0.45"/>
+    <line x1="-50" y1="148" x2="0" y2="148" stroke="#FB923C" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Ground shadow -->
+    <ellipse cx="155" cy="212" rx="135" ry="16" fill="#020617" opacity="0.55"/>
+
+    <!-- Rear Wheel -->
+    <circle cx="72" cy="178" r="36" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+    <circle cx="72" cy="178" r="15" fill="#F97316"/>
+    <circle cx="72" cy="178" r="6" fill="#FFFFFF"/>
+
+    <!-- Front Wheel -->
+    <circle cx="242" cy="178" r="36" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+    <circle cx="242" cy="178" r="15" fill="#F97316"/>
+    <circle cx="242" cy="178" r="6" fill="#FFFFFF"/>
+
+    <!-- Scooter Body (Navy + Orange) -->
+    <path d="M42 150 Q65 112 135 118 L188 122 L214 68 L234 72 L212 146 Q244 148 262 170 L205 176 L112 176 Q62 174 42 150 Z" fill="url(#accent)"/>
+    <path d="M58 148 Q95 130 165 134 L196 136 L186 164 L96 164 Z" fill="#0B132B"/>
+    <!-- Headlight beam -->
+    <polygon points="244,98 335,76 335,134" fill="#FDE68A" opacity="0.22"/>
+    <circle cx="234" cy="100" r="9" fill="#FEF08A"/>
+
+    <!-- Passenger (Rear Seat) -->
+    <path d="M88 118 C88 86 108 72 126 76 C138 78 144 96 138 120 Z" fill="#1D4ED8"/>
+    <!-- Passenger Helmet -->
+    <circle cx="118" cy="52" r="21" fill="#FFFFFF"/>
+    <path d="M126 42 C136 44 140 52 136 60 L122 58 Z" fill="#0B132B"/>
+
+    <!-- SakayNa Rider (Front Seat) -->
+    <path d="M148 120 C148 82 170 68 192 74 L214 92 L202 106 L182 96 L180 122 Z" fill="#F97316"/>
+    <!-- Rider Vest Stripe -->
+    <rect x="160" y="88" width="20" height="6" rx="3" fill="#FFFFFF"/>
+    <!-- Rider Helmet (Dark Navy + Orange Visor Accent) -->
+    <circle cx="182" cy="48" r="23" fill="#0B132B" stroke="#F97316" stroke-width="4"/>
+    <path d="M190 38 C202 40 206 49 202 58 L186 55 Z" fill="#38BDF8"/>
+  </g>
+
+  <!-- Floating Verified Safety Badge -->
+  <g transform="translate(565, 68)">
+    <rect x="0" y="0" width="185" height="68" rx="16" fill="#0B132B" fill-opacity="0.88" stroke="#F97316" stroke-opacity="0.5" stroke-width="1.5"/>
+    <circle cx="34" cy="34" r="18" fill="#F97316" fill-opacity="0.2"/>
+    <path d="M34 21 L44 25 V33 C44 39.5 39.6 44.8 34 46.5 C28.4 44.8 24 39.5 24 33 V25 L34 21 Z" fill="#F97316"/>
+    <path d="M30 34 L33 37 L39 30" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="64" y="30" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="800">VERIFIED RIDER</text>
+    <text x="64" y="48" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Iligan City • Safe &amp; Fast</text>
+  </g>
+</svg>
